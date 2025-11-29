@@ -2,6 +2,9 @@ import { NavLink as RouterNavLink, NavLinkProps } from "react-router-dom";
 import { forwardRef } from "react";
 import { cn } from "@/lib/utils";
 
+// Navigation component - no color theme changes needed as it uses semantic CSS variables
+// Colors are inherited from the global theme (green/orange/black) through Tailwind classes
+
 interface NavLinkCompatProps extends Omit<NavLinkProps, "className"> {
   className?: string;
   activeClassName?: string;
