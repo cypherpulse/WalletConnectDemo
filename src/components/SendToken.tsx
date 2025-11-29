@@ -8,6 +8,9 @@ import { Card } from '@/components/ui/card';
 import { Send, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
+// Color Theme: Green (primary) for success/security, Orange (secondary) for energy/warnings
+// Updated from cyberpunk cyan/purple/pink theme to green/orange/black for better accessibility
+
 // USDC Contract Addresses
 const USDC_ADDRESSES = {
   [mainnet.id]: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
@@ -134,7 +137,7 @@ export const SendToken = () => {
               type="button"
               variant={selectedNetwork === 'base' ? 'default' : 'outline'}
               onClick={() => setSelectedNetwork('base')}
-              className={selectedNetwork === 'base' ? 'glow-cyan' : ''}
+              className={selectedNetwork === 'base' ? 'glow-green' : ''}
             >
               Base
             </Button>
@@ -142,7 +145,7 @@ export const SendToken = () => {
               type="button"
               variant={selectedNetwork === 'ethereum' ? 'default' : 'outline'}
               onClick={() => setSelectedNetwork('ethereum')}
-              className={selectedNetwork === 'ethereum' ? 'glow-cyan' : ''}
+              className={selectedNetwork === 'ethereum' ? 'glow-green' : ''}
             >
               Ethereum
             </Button>
@@ -181,7 +184,7 @@ export const SendToken = () => {
           onClick={handleSend}
           disabled={isPending || isConfirming || !amount}
           size="lg"
-          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-display font-bold tracking-wider glow-cyan"
+          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-display font-bold tracking-wider glow-green"
         >
           {isPending || isConfirming ? (
             <>
