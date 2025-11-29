@@ -40,3 +40,5 @@ coverage/
 *.njsproj
 *.sln
 *.sw?
+
+scripts/
