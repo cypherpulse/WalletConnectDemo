@@ -3,6 +3,12 @@ import { SendToken } from '@/components/SendToken';
 import { useAccount } from 'wagmi';
 import { Shield, Zap, Lock } from 'lucide-react';
 
+// Green, Orange, Black theme - Updated from cyberpunk cyan/purple/pink
+// Primary: Green (120° hue) - for main actions and highlights
+// Secondary: Orange (30° hue) - for secondary elements and accents
+// Background: Black (near black) - for dark theme consistency
+// This theme maintains the futuristic aesthetic while using earthier, more accessible colors
+
 const Index = () => {
   const { isConnected } = useAccount();
 
@@ -29,7 +35,7 @@ const Index = () => {
             </div>
             
             <p className="text-xl md:text-2xl text-foreground/80 max-w-2xl mx-auto font-light">
-              Experience the future of decentralized connectivity
+              Experience the future of <span className="text-primary font-medium">decentralized connectivity</span>
             </p>
           </div>
 
@@ -70,9 +76,10 @@ const Index = () => {
             </div>
           )}
 
-          {/* Features Grid */}
+          {/* Features Grid - Updated color scheme: Green for security, Orange for speed, Orange for privacy */}
           <div className="grid md:grid-cols-3 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
-            <div className="bg-card border border-primary/20 rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:glow-cyan">
+            <div className="bg-card border border-primary/20 rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:glow-green">
+              {/* Security feature - Green glow for trust/safety */}
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-3 bg-primary/10 rounded-lg">
                   <Shield className="h-6 w-6 text-primary" />
@@ -84,7 +91,8 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="bg-card border border-secondary/20 rounded-xl p-6 hover:border-secondary/50 transition-all duration-300 hover:glow-purple">
+            <div className="bg-card border border-secondary/20 rounded-xl p-6 hover:border-secondary/50 transition-all duration-300 hover:glow-orange">
+              {/* Speed feature - Orange glow for energy/performance */}
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-3 bg-secondary/10 rounded-lg">
                   <Zap className="h-6 w-6 text-secondary" />
@@ -96,7 +104,8 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="bg-card border border-accent/20 rounded-xl p-6 hover:border-accent/50 transition-all duration-300 hover:glow-pink">
+            <div className="bg-card border border-accent/20 rounded-xl p-6 hover:border-accent/50 transition-all duration-300 hover:glow-orange">
+              {/* Privacy feature - Orange glow for protection/confidentiality */}
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-3 bg-accent/10 rounded-lg">
                   <Lock className="h-6 w-6 text-accent" />
@@ -111,7 +120,7 @@ const Index = () => {
 
           {/* Footer */}
           <div className="text-center text-muted-foreground text-sm animate-in fade-in duration-1000 delay-500">
-            <p>Powered by WalletConnect Protocol</p>
+            <p>Powered by <span className="text-primary font-semibold">AppKit</span> & <span className="text-secondary font-semibold">Base Network</span></p>
           </div>
         </div>
       </div>
@@ -119,6 +128,7 @@ const Index = () => {
       {/* Corner accent effects */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2" />
+      <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-accent/10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
     </div>
   );
 };
