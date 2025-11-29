@@ -1,6 +1,9 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
+// 404 Error page - uses semantic color variables that adapt to green/orange/black theme
+// Primary color (green) used for the return link to maintain visual consistency
+
 const NotFound = () => {
   const location = useLocation();
 
