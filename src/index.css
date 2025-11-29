@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Sci-fi cyberpunk theme */
+    --background: 220 25% 6%;
+    --foreground: 180 100% 90%;
+
+    --card: 220 20% 10%;
+    --card-foreground: 180 100% 90%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 180 100% 90%;
+
+    --primary: 188 100% 50%;
+    --primary-foreground: 220 25% 6%;
+
+    --secondary: 280 100% 60%;
+    --secondary-foreground: 220 25% 6%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 180 20% 60%;
+
+    --accent: 320 100% 55%;
+    --accent-foreground: 220 25% 6%;
+
+    --destructive: 0 90% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 188 100% 50%;
+    --input: 220 15% 15%;
+    --ring: 188 100% 50%;
+
+    --radius: 0.5rem;
+
+    /* Neon glow colors */
+    --neon-cyan: 188 100% 50%;
+    --neon-pink: 320 100% 55%;
+    --neon-purple: 280 100% 60%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(188 100% 50%), hsl(280 100% 60%));
+    --gradient-hero: linear-gradient(180deg, hsl(220 25% 6% / 0) 0%, hsl(220 25% 6%) 100%);
+    
+    /* Shadows and glows */
+    --glow-cyan: 0 0 20px hsl(188 100% 50% / 0.5), 0 0 40px hsl(188 100% 50% / 0.3);
+    --glow-purple: 0 0 20px hsl(280 100% 60% / 0.5), 0 0 40px hsl(280 100% 60% / 0.3);
+    --glow-pink: 0 0 20px hsl(320 100% 55% / 0.5), 0 0 40px hsl(320 100% 55% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Rajdhani', 'Inter', system-ui, sans-serif;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+}
+
+@layer utilities {
+  .text-neon-cyan {
+    color: hsl(var(--neon-cyan));
+  }
+  
+  .text-neon-pink {
+    color: hsl(var(--neon-pink));
+  }
+  
+  .text-neon-purple {
+    color: hsl(var(--neon-purple));
+  }
+  
+  .glow-cyan {
+    box-shadow: var(--glow-cyan);
+  }
+  
+  .glow-purple {
+    box-shadow: var(--glow-purple);
+  }
+  
+  .glow-pink {
+    box-shadow: var(--glow-pink);
+  }
+  
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .grid-pattern {
+    background-image: 
+      linear-gradient(hsl(188 100% 50% / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(188 100% 50% / 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(188 100% 50% / 0.5), 0 0 40px hsl(188 100% 50% / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 30px hsl(188 100% 50% / 0.8), 0 0 60px hsl(188 100% 50% / 0.5);
+    }
+  }
+  
+  .animate-grid-flow {
+    animation: grid-flow 20s linear infinite;
+  }
+  
+  @keyframes grid-flow {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 50px 50px;
+    }
+  }
+}
